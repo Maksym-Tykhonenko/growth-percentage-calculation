@@ -18,16 +18,27 @@ function growthPercentageCalculating(e) {
     const newSalary = e.target.elements.newSalary.value;
     const oldSalary = e.target.elements.oldSalary.value;
     //console.log( oldSalary, newSalary);
-    
-    const growthPercentage = (((newSalary - oldSalary) / oldSalary) * 100).toFixed(2);
+
+    let growthPercentage = (((newSalary - oldSalary) / oldSalary) * 100).toFixed(2);
     //console.log(growthPercentage)
 
+    updFormula(growthPercentage, newSalary, oldSalary);
+    inputReset(e)
+    
+};
+
+//function growthPercentage(newSalary, oldSalary) {
+//    
+//}
+
+function updFormula(growthPercentage, newSalary, oldSalary) {
     refs.result.textContent = growthPercentage;
     refs.newSalaryInFormula.textContent = newSalary;
     refs.oldSalaryInFormula.textContent = oldSalary;
     refs.oldSalaryInFormula2.textContent = oldSalary;
+}
 
+function inputReset(e) {
     e.target.elements.newSalary.value = '';
     e.target.elements.oldSalary.value = '';
-};
-
+}
