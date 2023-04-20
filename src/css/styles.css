@@ -12,7 +12,8 @@ body {
   line-height: 1.5;
 }
 
-#search-box {
+#old-salary,
+#new-salary {
   font: inherit;
   padding: 8px;
   max-width: 320px;

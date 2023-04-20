@@ -7,11 +7,16 @@
     <title>Homework 10</title>
   </head>
   <body>
-    <p></p>
-    <input type="text" id="search-box" />
-    <ul class="country-list"></ul>
-    <div class="country-info"></div>
+    <p>growthPercentage</p>
+    <form action="" class="form">
+      <input type="text" placeholder="oldSalary" id="old-salary" name="oldSalary"/>
+      <input type="text" placeholder="newSalary" id="new-salary" name="newSalary" />
+      
+      <button type="submit" class="btn">to calculate</button>
+    </form>
+    <p>((<span class="formula-newSalary">newSalary</span> - <span class="formula-oldSalary">oldSalary</span>) / <span class="formula-oldSalary2">oldSalary</span>) * 100) = <span class="result"></span>%;</p>
     <div></div>
     <script src="index.js" type="module"></script>
   </body>
 </html>
+
