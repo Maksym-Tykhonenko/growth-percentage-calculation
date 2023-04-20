@@ -1,8 +1,10 @@
 import './css/styles.css';
 
 refs = {
-    result: document.querySelector('.result'),
     form: document.querySelector('.form'),
+    //btn: document.querySelector('.btn'),
+    result: document.querySelector('.result'),
+    
     newSalaryInFormula: document.querySelector('.formula-newSalary'),
     oldSalaryInFormula: document.querySelector('.formula-oldSalary'),
     oldSalaryInFormula2: document.querySelector('.formula-oldSalary2'),

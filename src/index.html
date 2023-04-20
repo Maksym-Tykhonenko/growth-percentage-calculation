@@ -8,12 +8,13 @@
   </head>
   <body>
     <p>growthPercentage</p>
-    <form class="form">
+    <form class="form" onsubmit="return false">
       <input type="text" placeholder="oldSalary" id="old-salary" name="oldSalary"/>
       <input type="text" placeholder="newSalary" id="new-salary" name="newSalary" />
-      
       <button type="submit" class="btn">to calculate</button>
-    </form>
+    </form> 
+      
+   
     <p>((<span class="formula-newSalary">newSalary</span> - <span class="formula-oldSalary">oldSalary</span>) / <span class="formula-oldSalary2">oldSalary</span>) * 100) = <span class="result"></span>%;</p>
     <div></div>
     <script src="index.js" type="module"></script>
