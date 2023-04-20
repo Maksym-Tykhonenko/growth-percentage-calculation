@@ -1,6 +1,6 @@
 import './css/styles.css';
 
-refs = {
+const refs = {
     form: document.querySelector('.form'),
     btn: document.querySelector('.btn'),
     result: document.querySelector('.result'),
