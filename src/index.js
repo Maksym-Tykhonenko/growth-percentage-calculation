@@ -4,37 +4,37 @@ const refs = {
     form: document.querySelector('.form'),
     btn: document.querySelector('.btn'),
     result: document.querySelector('.result'),
-    
-    newSalaryInFormula: document.querySelector('.formula-newSalary'),
-    oldSalaryInFormula: document.querySelector('.formula-oldSalary'),
-    oldSalaryInFormula2: document.querySelector('.formula-oldSalary2'),
-    oldInput: document.querySelector('#old-salary'),
-    newInput: document.querySelector('#new-salary')
 };
 
 refs.form.addEventListener("submit", growthPercentageCalculating);
-//refs.btn.addEventListener("click", growthPercentageCalculating);
 
+resultReset();
     
 function growthPercentageCalculating(e) {
+
     e.preventDefault();
     const newSalary = e.target.elements.newSalary.value;
     const oldSalary = e.target.elements.oldSalary.value;
     console.log( oldSalary, newSalary);
 
-    let growthPercentage = (((newSalary - oldSalary) / oldSalary) * 100).toFixed(2);
-    console.log(growthPercentage)
+    let finalPercentageResult = growthPercentage(newSalary, oldSalary);
+    //console.log(growthPercentage)
 
-    updFormula(growthPercentage, newSalary, oldSalary);
-    inputReset(e)
-    
+    if (newSalary === '' || oldSalary === '') {
+        alert('Please fill in all fields')
+    } else {
+        updResult(finalPercentageResult);
+        inputReset(e)
+    };
+
 };
 
-function updFormula(growthPercentage, newSalary, oldSalary) {
-    refs.result.textContent = growthPercentage;
-    refs.newSalaryInFormula.textContent = newSalary;
-    refs.oldSalaryInFormula.textContent = oldSalary;
-    refs.oldSalaryInFormula2.textContent = oldSalary;
+function growthPercentage(newSalary, oldSalary) {
+  return  (((newSalary - oldSalary) / oldSalary) * 100).toFixed(2);
+};
+
+function updResult(growthPercentage) {
+    refs.result.textContent = growthPercentage + '%';
 };
 
 function inputReset(e) {
@@ -42,3 +42,6 @@ function inputReset(e) {
     e.target.elements.oldSalary.value = '';
 };
 
+function resultReset() {
+    refs.result.textContent = '';
+};
