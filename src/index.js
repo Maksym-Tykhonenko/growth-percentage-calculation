@@ -17,8 +17,7 @@ refs.form.addEventListener("submit", growthPercentageCalculating);
 
     
 function growthPercentageCalculating(e) {
-    //e.preventDefault();
-    //e.preventDefault();
+    e.preventDefault();
     const newSalary = e.target.elements.newSalary.value;
     const oldSalary = e.target.elements.oldSalary.value;
     console.log( oldSalary, newSalary);
