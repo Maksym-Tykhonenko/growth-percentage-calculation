@@ -13,8 +13,8 @@ resultReset();
 function growthPercentageCalculating(e) {
 
     e.preventDefault();
-    const newSalary = e.target.elements.newSalary.value;
-    const oldSalary = e.target.elements.oldSalary.value;
+    const newSalary = e.target.elements.newSalary.value.replace(/\s/g, "");
+    const oldSalary = e.target.elements.oldSalary.value.replace(/\s/g, "");
     console.log( oldSalary, newSalary);
 
     let finalPercentageResult = growthPercentage(newSalary, oldSalary);
