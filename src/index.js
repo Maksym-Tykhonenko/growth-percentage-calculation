@@ -2,7 +2,7 @@ import './css/styles.css';
 
 refs = {
     form: document.querySelector('.form'),
-    //btn: document.querySelector('.btn'),
+    btn: document.querySelector('.btn'),
     result: document.querySelector('.result'),
     
     newSalaryInFormula: document.querySelector('.formula-newSalary'),
@@ -13,34 +13,33 @@ refs = {
 };
 
 refs.form.addEventListener("submit", growthPercentageCalculating);
+//refs.btn.addEventListener("click", growthPercentageCalculating);
 
     
 function growthPercentageCalculating(e) {
-    e.preventDefault();
+    //e.preventDefault();
+    //e.preventDefault();
     const newSalary = e.target.elements.newSalary.value;
     const oldSalary = e.target.elements.oldSalary.value;
-    //console.log( oldSalary, newSalary);
+    console.log( oldSalary, newSalary);
 
     let growthPercentage = (((newSalary - oldSalary) / oldSalary) * 100).toFixed(2);
-    //console.log(growthPercentage)
+    console.log(growthPercentage)
 
     updFormula(growthPercentage, newSalary, oldSalary);
     inputReset(e)
     
 };
 
-//function growthPercentage(newSalary, oldSalary) {
-//    
-//}
-
 function updFormula(growthPercentage, newSalary, oldSalary) {
     refs.result.textContent = growthPercentage;
     refs.newSalaryInFormula.textContent = newSalary;
     refs.oldSalaryInFormula.textContent = oldSalary;
     refs.oldSalaryInFormula2.textContent = oldSalary;
-}
+};
 
 function inputReset(e) {
     e.target.elements.newSalary.value = '';
     e.target.elements.oldSalary.value = '';
-}
+};
+
