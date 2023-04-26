@@ -1,4 +1,5 @@
 import './css/styles.css';
+import Notiflix from 'notiflix';
 
 const refs = {
     form: document.querySelector('.form'),
@@ -15,13 +16,12 @@ function growthPercentageCalculating(e) {
     e.preventDefault();
     const newSalary = e.target.elements.newSalary.value.replace(/\s/g, "");
     const oldSalary = e.target.elements.oldSalary.value.replace(/\s/g, "");
-    //console.log( oldSalary, newSalary);
 
     let finalPercentageResult = growthPercentage(newSalary, oldSalary);
-    //console.log(finalPercentageResult ,'%')
 
     if (newSalary === '' || oldSalary === '') {
-        alert('Please fill in all fields')
+        Notiflix.Notify.failure('Please fill in all fields');
+        //alert('Please fill in all fields')
     } else {
         updResult(finalPercentageResult);
         inputReset(e)
@@ -35,7 +35,6 @@ function growthPercentage(newSalary, oldSalary) {
 
 function updResult(finalPercentageResult) {
     refs.result.textContent = finalPercentageResult + ' %';
-    //console.log(refs.result.textContent)
 };
 
 function inputReset(e) {
